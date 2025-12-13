@@ -1,0 +1,64 @@
+*{
+    margin: 0;
+    padding: 0;
+}
+
+body{
+    font-family: "Lobster", sans-serif;
+
+}
+
+/* Navbar */
+nav{
+    display: flex;
+    background-color: rgb(37, 37, 220);
+    justify-content: space-around;
+    /* padding: 20px 0; */
+    color: rgb(2, 2, 35);
+    height: 60px;
+    align-items: center;
+    justify-content: space-around;
+    font-size: 2rem;
+  font-style: italic;
+
+}
+
+
+nav .logo{
+    font-family: 'Times New Roman', Times, serif;
+    letter-spacing: 3px;
+}
+
+nav ul{
+    display: flex;
+    list-style: none;
+    width: 40%;
+    align-items: center;
+    justify-content: space-between;
+    background-color:  rgb(37, 37, 220);
+}        
+
+nav ul li a {
+    color: rgb(1, 1, 30);
+    text-decoration: none;
+    font-size: 0.8em;
+}
+
+nav ul li a:hover{
+    color:rgb(3, 3, 70)
+}
+
+/* Responsive Breakpoint*/
+
+/* Ukuran teblet*/
+@media screen and (max-width:768px) {
+    nav ul {
+        width: 50%;
+    }
+}
+/* Ukuran mobile */
+@media screen and (max-width:576px) {
+    nav ul {
+        display: none;
+    }
+}
