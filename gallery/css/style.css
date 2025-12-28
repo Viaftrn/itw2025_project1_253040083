@@ -5,60 +5,407 @@
 
 body{
     font-family: "Lobster", sans-serif;
-
+    overflow-x:hidden ;
+    min-height: 2000px;
+    background-color: white;
 }
 
 /* Navbar */
-nav{
+.Navbar{
     display: flex;
-    background-color: rgb(37, 37, 220);
-    justify-content: space-around;
-    /* padding: 20px 0; */
-    color: rgb(2, 2, 35);
-    height: 60px;
-    align-items: center;
-    justify-content: space-around;
-    font-size: 2rem;
-  font-style: italic;
-
-}
-
-
-nav .logo{
-    font-family: 'Times New Roman', Times, serif;
-    letter-spacing: 3px;
-}
-
-nav ul{
-    display: flex;
-    list-style: none;
-    width: 40%;
-    align-items: center;
+    background-color:#bcdaec;
     justify-content: space-between;
-    background-color:  rgb(37, 37, 220);
-}        
+    padding: 5rem, 7%;
+    color: rgb(23, 76, 189);
+    height: 55px;
+    width: 100%;
+    align-items: center;
+    border-bottom: 1px, solid var(--primary);
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    z-index: 9999;
 
-nav ul li a {
-    color: rgb(1, 1, 30);
-    text-decoration: none;
-    font-size: 0.8em;
 }
 
-nav ul li a:hover{
-    color:rgb(3, 3, 70)
+
+.Navbar .navbar-logo{
+    font-family: 'Times New Roman', Times, serif;
+    font-size: 3rem;
+    font-weight: 700;
+    color: rgb(32, 34, 35);
 }
 
-/* Responsive Breakpoint*/
+.Navbar .navbar-nav a {
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    color: rgb(56, 177, 238);
+    font-size: 1.8rem;
+    display: inline-block;
+    margin: 0 1rem;
+    letter-spacing: 3px;
+    top: 0;
+    
+}
+
+.Navbar .navbar-nav a:hover{
+    color:rgb(7, 62, 75)
+}
+
+.Navbar .navbar-nav a::after{
+    content: "";
+    display: block;
+    padding-bottom: 0, 5rem;
+    border-bottom: 0, 1rem solid var(--primary);
+    transform: scaleX(0);
+    transition: 0.2s linear;
+}
+
+.Navbar .navbar-nav a:hover::after{
+    transform: scaleX(0,5);
+}
+
+.Navbar .navbar-extra a{
+
+color: white;
+margin: 0 0.5rem;
+}
+
+.Navbar .navbar-extra a:hover{
+    color: var(--primary);
+}
+
+/* Hamburger Menu */
+#hamburger-menu{
+    display: none;
+    cursor: pointer;
+}
+
+  
+
+/* ukuran laptop*/
+@media (max-width: 1366px) {
+    html {
+        font-size: 75%;
+    }
+}
 
 /* Ukuran teblet*/
-@media screen and (max-width:768px) {
-    nav ul {
-        width: 50%;
+@media  (max-width:768px) {
+    html {
+        font-size: 62.5%;
+    }
+      #hamburger-menu{
+        display:inline-block ;
+    }
+
+    .Navbar .navbar-nav{
+        position: absolute;
+        top: 100%;
+        right: -100%;
+        background-color: #edecec;
+        width: 30rem;
+        height: 100vh;
+        transition: 0.3s;
+        }
+
+        .Navbar .navbar-nav.active{
+            right: 0;
+
+        }
+        .Navbar .navbar-nav a{
+            color: var(--bg);
+            display: block;
+            margin: 2rem;
+            padding: 1.5rem;
+            font-size: 2rem;
+        }
+
+        .Navbar .navbar-nav a::after{
+            transform-origin: 0 0;
+
+        }
+        .Navbar .navbar-nav a:hover::after{
+            transform: scaleX(0.2);
+        }
+    }
+
+/* Ukuran mobile phone */
+@media (max-width:450px) {
+    html {
+        display: 55%;
     }
 }
-/* Ukuran mobile */
-@media screen and (max-width:576px) {
-    nav ul {
-        display: none;
-    }
+/* Hero Section */
+.hero{
+    height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0 40px;
+    position: relative;
+
 }
+
+
+.contact{
+    max-width: 200%;
+    height: 50%;
+
+}
+
+.hero .contact h2{
+    font-size: 5.5rem;
+    color: cornflowerblue;
+    text-shadow: 1px, 1px, 3px rgba(245, 245, 246, 0.947);
+    line-height: 1.1;
+}
+
+.hero .contact span{
+    color: rgb(111, 135, 180);
+}
+
+.hero .contact h1{
+    font-size: 2.5rem;
+    margin-top: 1rem;
+    color: rgb(9, 178, 234);
+}
+
+.hero .contact p,h3{
+    font-size: 1.6rem;
+    margin-top: 1rem;
+    line-height: 1.2;
+   font-weight: 100;
+   text-shadow: 1px, 1px, 2px #f9f9f9f1;
+   color: rgb(147, 197, 241);
+}
+
+.home-img{
+    width: 90%;
+    display: flex;
+    justify-content: center;
+
+}
+
+
+.home-img img{
+    width: 250px;
+    height: 250px;
+    object-fit: cover;
+    border-radius: 50%;
+    border: 5px solid rgb(52, 77, 189);
+}
+
+
+/* About Me Section*/
+.about{
+    padding: 10rem 7% 1.4rem;
+    min-height: 90vh;
+    padding: 80px 10%;
+    color: rgb(83, 161, 230);
+}
+
+.about .about-scr{
+    font-size: 1.5rem;
+    display: flex;
+    flex-direction: column;
+    align-items: right;
+    justify-content: center;
+}
+
+.about .about-scr h2{
+    font-size: 3rem;
+    margin-top: 1rem;
+    color: rgb(75, 191, 233);
+}
+
+.about .about-scr span{
+    font-size: 3rem;
+    margin-top: 1rem;
+    color: rgb(23, 123, 210);
+}
+
+.about .about-scr ul li{
+    font-size: 1.5rem;
+    margin-top: 0;
+    color: rgb(135, 199, 254);
+}
+
+.about .about-scr ul li span{
+    font-size: 1.5rem;
+    margin-top: 0;
+    color: rgb(7, 76, 206);
+}
+
+.about-container{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center
+
+}
+.about-text{
+    max-width: 100%;
+    height: 50%;
+}
+
+.about-text h3{
+    font-size: 3rem;
+    margin-top: 1rem;
+    color: rgb(54, 135, 206);
+}
+.about h3 span{
+    font-size: 3rem;
+    margin-top: 1rem;
+    color: rgb(131, 181, 224);
+}
+.about-text p{
+    font-size: 1.6rem;
+    margin-top: 1rem;
+    line-height: 1.5;
+    font-weight: 100;
+    text-shadow: 1px, 1px, 2px #f1f1f5f1;
+    color: rgb(103, 176, 240);
+}
+
+/* Pendidikan */
+
+.pendidikan{
+  padding: 10rem 7% 1.4rem;
+    min-height: 90vh;
+    padding: 80px 10%;
+    color: rgb(83, 161, 230);
+}
+.aaa h3{
+    font-size: 42px;
+    text-align: center;
+    color: rgb(108, 153, 236);
+    margin-bottom: 10px;
+}
+
+.aaa p{
+    font-size: 2.5rem;
+    color: rgb(103, 182, 208);
+}
+.aaa hr{
+    width: 60%;
+    margin: 30px auto;
+    border: 0;
+    border-top: 1px solid rgba(255,255,255,0.2);
+}
+.aaa div{
+    margin: 18px 0;
+    font-size: 20px;
+    color: rgb(46, 121, 201);
+}
+
+.contact{
+    margin: 0;
+    padding: 10rem 7% 1.4rem;
+    min-height: 80vh;
+    padding: 80px 10%;
+}
+.contact h1{
+    font-size: 2rem;
+    color: cornflowerblue;
+}
+.contact ul li{
+    font-size: 1.5rem;
+    color: rgb(13, 179, 235);
+}
+
+
+
+.contact h2{
+    font-size: 3rem;
+    color: #1743bc;
+    text-align: center;
+}
+
+.contact span{
+    font-size: 3rem;
+    color: rgb(96, 180, 231);
+    text-align: center;
+}
+.contact .row {
+  display: flex;
+  margin-top: 2rem;
+  background-color: rgb(11, 112, 212);
+  flex-wrap: wrap;
+}
+
+
+.contact .row form {
+  flex: 2 2 25rem;
+  padding: 1rem 1rem;
+  text-align: center;
+}
+
+.contact a{
+     font-size: 1.5rem;
+    color: rgb(6, 189, 250);
+
+}
+
+.contact .row form .input-group {
+  display: flex;
+  align-items: center;
+  margin-top: 1rem;
+  background-color: #eaeef5;
+  border: 1px solid white;
+  padding-left: 1rem;
+  color: #1743bc;
+}
+
+.contact .row form .input-group input {
+  width: 100%;
+  padding: 0.5rem;
+  font-size: 1.7rem;
+  background: none;
+}
+
+.contact .row form .btn {
+  margin-top: 3rem;
+  display: inline-block;
+  padding: 1rem 1rem;
+  font-size: 1.7rem;
+  color: rgb(4, 26, 46);
+  background-color: rgb(19, 154, 239);
+}
+
+.skill{
+    margin: 0;
+    padding: 10rem 7% 1.4rem;
+    min-height: 80vh;
+    padding: 80px 10%;
+}
+
+.skill.skill h2{
+    font-size:4rem ;
+    color: rgb(87, 152, 220);
+    text-align: center;
+}
+.skill.skill span{
+    font-size: 4rem;
+    color: rgb(189, 212, 255);
+    text-align: center;
+}
+ .skill.skill p{
+    padding: 2px;
+    margin: 2px;
+    font-size: 3rem;
+    color: rgb(21, 115, 147);
+    text-align: center;
+ }
+ 
+footer {
+  text-align: center;
+  color: #5bc0ff;
+  font-size: 14px;
+  margin-top: 10px;
+  background-color: black;
+  height:1;
+  right: 90vh;
+}
+
+
