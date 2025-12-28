@@ -408,4 +408,41 @@ footer {
   right: 90vh;
 }
 
+/* Project */
+.project {
+    display: flex;
+    gap: 20px;
+    padding: 40px;
+    justify-content: center;    
+}
+
+
+.card{
+    background-color: #e8ecef;
+    width: 300px;
+    border-radius: 20pxpx;
+    overflow: hidden;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+}
+
+.card img{
+    width: 100%;
+    height: 200px;
+    object-fit: cover;
+}
+
+.card-body{
+    padding: 20px;
+
+}
+.card-body h3{
+    margin-bottom: 10px;
+    font-size: 20px;
+}
+
+.card-body p{
+    color: #bcdaec;
+    font-size: 14px;
+    line-height: 1.5;
+}
 
